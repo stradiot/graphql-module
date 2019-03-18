@@ -1,0 +1,15 @@
+{
+  "name": "graphql-module",
+  "version": "1.0.0",
+  "description": "graphql module for IoThings",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Martin Stradiot",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.4.8",
+    "graphql": "^14.1.1"
+  }
+}
