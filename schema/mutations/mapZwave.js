@@ -19,7 +19,7 @@ const MapZwaveResultType =new GraphQLObjectType({
 const mapZwave = {
     type: MapZwaveResultType,
     args: {
-        paramId: { type: new GraphQLNonNull(GraphQLInt) },
+        paramId: { type: GraphQLInt },
         moduleId: { type: new GraphQLNonNull(GraphQLString) },
         valueId: { type: new GraphQLNonNull(GraphQLString) }
     },

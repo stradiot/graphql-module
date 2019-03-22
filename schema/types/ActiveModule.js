@@ -9,6 +9,7 @@ const ActiveModuleType = new GraphQLObjectType({
     fields: () => ({
         moduleId: { type: GraphQLID },
         info: { type: GraphQLString },
+        type: { type: GraphQLString },
         available: { type: GraphQLBoolean }
     })
 });
