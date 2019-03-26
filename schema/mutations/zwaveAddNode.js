@@ -2,8 +2,7 @@ const {
     GraphQLNonNull,
     GraphQLBoolean,
     GraphQLID,
-    GraphQLObjectType
-} = require('graphql');
+    GraphQLObjectType } = require('graphql');
 const zwave = require('zwave-interface-module');
 
 const ZwaveAddNodeResultType =new GraphQLObjectType({

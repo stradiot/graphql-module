@@ -2,8 +2,7 @@ const {
     GraphQLNonNull,
     GraphQLBoolean,
     GraphQLInt,
-    GraphQLObjectType
-} = require('graphql');
+    GraphQLObjectType } = require('graphql');
 const sqlite = require('sqlite-module');
 const rrd = require('rrd-module');
 

@@ -1,11 +1,9 @@
 const {
     GraphQLNonNull,
     GraphQLInt,
-    GraphQLString,
     GraphQLID,
     GraphQLBoolean,
-    GraphQLObjectType
-} = require('graphql');
+    GraphQLObjectType } = require('graphql');
 const zwave = require('zwave-interface-module');
 
 const ZwaveEnablePollResultType =new GraphQLObjectType({

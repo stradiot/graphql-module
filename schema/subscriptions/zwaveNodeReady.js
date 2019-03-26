@@ -1,7 +1,3 @@
-const {
-    GraphQLInt,
-    GraphQLString,
-    GraphQLObjectType } = require('graphql');
 const zwave = require('zwave-interface-module');
 const { ZwaveDeviceType } = require('../types/zwave');
 const socket = require('../pubsub');

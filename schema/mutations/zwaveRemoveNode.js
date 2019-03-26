@@ -2,9 +2,7 @@ const {
     GraphQLNonNull,
     GraphQLID,
     GraphQLBoolean,
-    GraphQLString,
-    GraphQLObjectType
-} = require('graphql');
+    GraphQLObjectType } = require('graphql');
 const zwave = require('zwave-interface-module');
 
 const ZwaveRemoveNodeResultType =new GraphQLObjectType({

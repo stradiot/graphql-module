@@ -1,9 +1,3 @@
-const {
-    GraphQLNonNull,
-    GraphQLBoolean,
-    GraphQLInt,
-    GraphQLString,
-    GraphQLObjectType } = require('graphql');
 const zwave = require('zwave-interface-module');
 const sqlite = require('sqlite-module');
 const { DeviceParamType } = require('../types/instance');

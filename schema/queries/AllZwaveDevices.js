@@ -1,7 +1,4 @@
-const {
-    GraphQLID,
-    GraphQLList,
-    GraphQLNonNull } = require('graphql');
+const { GraphQLList } = require('graphql');
 const { ZwaveDeviceType } = require('../types/zwave');
 const sqlite = require('sqlite-module');
 

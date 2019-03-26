@@ -1,8 +1,7 @@
 const {
     GraphQLInt,
     GraphQLID,
-    GraphQLObjectType
-} = require('graphql');
+    GraphQLObjectType } = require('graphql');
 const zwave = require('zwave-interface-module');
 const socket = require('../pubsub');
 

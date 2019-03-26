@@ -2,7 +2,6 @@ const {
     GraphQLNonNull,
     GraphQLBoolean,
     GraphQLInt,
-    GraphQLString,
     GraphQLID,
     GraphQLObjectType } = require('graphql');
 const sqlite = require('sqlite-module');
