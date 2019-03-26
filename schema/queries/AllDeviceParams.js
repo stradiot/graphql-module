@@ -2,7 +2,7 @@ const { GraphQLList } = require('graphql');
 const sqlite = require('sqlite-module');
 const { DeviceParamType } = require('../types/instance');
 
-const DeviceParams = {
+const AllDeviceParams = {
     type: new GraphQLList(DeviceParamType),
     resolve(parent, args){
         const parameters = sqlite.getAllDeviceParams();
@@ -22,4 +22,4 @@ const DeviceParams = {
     }
 };
 
-module.exports = DeviceParams;
+module.exports = AllDeviceParams;

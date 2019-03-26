@@ -1,25 +1,28 @@
 const {
     GraphQLNonNull,
-    GraphQLInt, 
+    GraphQLInt,
     GraphQLString,
-    GraphQLObjectType } = require('graphql');
+    GraphQLID,
+    GraphQLBoolean,
+    GraphQLObjectType
+} = require('graphql');
 const zwave = require('zwave-interface-module');
 
 const ZwaveEnablePollResultType =new GraphQLObjectType({
     name: 'ZwaveEnablePollResult',
     fields: () => ({
-        moduleId: { type: GraphQLString },
-        valueId: { type: GraphQLString },
+        moduleId: { type: GraphQLID },
+        valueId: { type: GraphQLID },
         intensity: { type: GraphQLInt },
-        success: { type: GraphQLString }
+        success: { type: GraphQLBoolean }
     })
 });
 
 const zwaveEnablePoll = {
     type: ZwaveEnablePollResultType,
     args: {
-        moduleId: { type: new GraphQLNonNull(GraphQLString) },
-        valueId: { type: new GraphQLNonNull(GraphQLString) },
+        moduleId: { type: new GraphQLNonNull(GraphQLID) },
+        valueId: { type: new GraphQLNonNull(GraphQLID) },
         intensity: { type: new GraphQLNonNull(GraphQLInt) }
     },
     resolve(parent, args){

@@ -1,6 +1,7 @@
 const {
     GraphQLObjectType,
     GraphQLString,
+    GraphQLID,
     GraphQLInt,
     GraphQLList,
     GraphQLBoolean } = require('graphql');
@@ -10,7 +11,7 @@ const ZwaveDeviceType = new GraphQLObjectType({
   name: 'ZwaveDevice',
   fields: () => ({
     nodeId: { type: GraphQLInt },
-    moduleId: { type: GraphQLString },
+    moduleId: { type: GraphQLID },
     manufacturer:  { type: GraphQLString },
     product: { type: GraphQLString },
     type: { type: GraphQLString },
@@ -41,7 +42,7 @@ const ZwaveDeviceType = new GraphQLObjectType({
 });
 
 const ZwaveParameterType = new GraphQLObjectType({
-    name: 'ZwaveDeviceParameter',
+    name: 'ZwaveDevParam',
     fields: () => ({
       device: {
           type: ZwaveDeviceType,
@@ -57,7 +58,7 @@ const ZwaveParameterType = new GraphQLObjectType({
           }
       },
       devParamId: { type: GraphQLInt },
-      valueId: { type: GraphQLString },
+      valueId: { type: GraphQLID },
       name:  { type: GraphQLString },
       value: { type: GraphQLString },
       units: { type: GraphQLString },

@@ -1,6 +1,6 @@
 const {
     GraphQLInt,
-    GraphQLString,
+    GraphQLID,
     GraphQLObjectType } = require('graphql');
 const zwave = require('zwave-interface-module');
 const socket = require('../pubsub');
@@ -8,9 +8,9 @@ const socket = require('../pubsub');
 zwave.on('node removed', (data) => socket.publish('zwave node removed', data));
 
 const ZwaveNodeRemovedType =new GraphQLObjectType({
-    name: 'ZwaveDeviceRemoved',
+    name: 'ZwaveNodeRemoved',
     fields: () => ({
-        moduleId: { type: GraphQLString },
+        moduleId: { type: GraphQLID },
         nodeId: { type: GraphQLInt }
     })
 });

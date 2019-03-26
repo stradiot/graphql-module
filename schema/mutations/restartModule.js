@@ -1,21 +1,23 @@
 const {
     GraphQLNonNull,
     GraphQLString,
+    GraphQLBoolean,
+    GraphQLID,
     GraphQLObjectType } = require('graphql');
 const mqtt = require('mqtt-module');
 
 const RestartModuleResultType =new GraphQLObjectType({
     name: 'RestartModuleResult',
     fields: () => ({
-        moduleId: { type: GraphQLString },
-        success: { type: GraphQLString }
+        moduleId: { type: GraphQLID },
+        success: { type: GraphQLBoolean }
     })
 });
 
 const restartModule = {
     type: RestartModuleResultType,
     args: {
-        moduleId: { type: new GraphQLNonNull(GraphQLString) }
+        moduleId: { type: new GraphQLNonNull(GraphQLID) }
     },
     resolve(parent, args){
         mqtt.restartModule(args.moduleId);

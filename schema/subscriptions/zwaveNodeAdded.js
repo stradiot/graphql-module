@@ -1,16 +1,17 @@
 const {
     GraphQLInt,
-    GraphQLString,
-    GraphQLObjectType } = require('graphql');
+    GraphQLID,
+    GraphQLObjectType
+} = require('graphql');
 const zwave = require('zwave-interface-module');
 const socket = require('../pubsub');
 
 zwave.on('node added', (data) => socket.publish('zwave node added', data));
 
 const ZwaveNodeAddedType =new GraphQLObjectType({
-    name: 'ZwaveDeviceAdded',
+    name: 'ZwaveNodeAdded',
     fields: () => ({
-        moduleId: { type: GraphQLString },
+        moduleId: { type: GraphQLID },
         nodeId: { type: GraphQLInt }
     })
 });
