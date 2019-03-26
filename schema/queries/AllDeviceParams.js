@@ -7,8 +7,8 @@ const AllDeviceParams = {
     resolve(parent, args){
         const parameters = sqlite.getAllDeviceParams();
         return parameters.map((parameter) => ({
-            devParamId: parameter.dev_param_id,
-            paramId: parameter.fk_param_id,
+            paramId: parameter.dev_param_id,
+            parameterId: parameter.fk_param_id,
             devId: parameter.fk_dev_id,
             protocolId: parameter.fk_protocol_id,
             name: parameter.name,
