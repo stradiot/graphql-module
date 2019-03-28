@@ -1,7 +1,7 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const schema = require('./schema/schema');
-const { port } = require('./config');
+const { port, certificatePath, privateKeyPath } = require('./config');
 const fs = require('fs');
 const https = require('https');
 
@@ -11,8 +11,8 @@ apollo.applyMiddleware({ app });
 
 const server = https.createServer(
   {
-    cert: fs.readFileSync(`./ssl/server.crt`),
-    key: fs.readFileSync(`./ssl/server.key`)
+    cert: fs.readFileSync(certificatePath),
+    key: fs.readFileSync(privateKeyPath)
   },
   app
 );
