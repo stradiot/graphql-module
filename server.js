@@ -13,8 +13,8 @@ app.use((req, res, next) => {
     const credentials = auth(req);
 
     if (!credentials || credentials.name !== user || credentials.pass !== pass) {
-        res.set('WWW-Authenticate', 'Basic realm="IoThings"')
-        res.status(401).send('Authentication required.')
+        res.set('WWW-Authenticate', 'Basic realm="IoThings"');
+        res.status(401).send(JSON.stringify({ error: 'Unauthorized' }));
         return;
     }
 
@@ -32,4 +32,4 @@ const server = https.createServer(
 );
 apollo.installSubscriptionHandlers(server);
 
-server.listen({ port }, () =>  console.log('🚀 Server ready at 4000'));
+server.listen({ port }, () =>  console.log(`Server ready at ${port}`));
