@@ -12,6 +12,10 @@ const app = express();
 app.use((req, res, next) => {
     const credentials = auth(req);
 
+    console.log(credentials);
+    console.log(user);
+    console.log(pass);
+
     if (!credentials || credentials.name !== user || credentials.pass !== pass) {
         res.set('WWW-Authenticate', 'Basic realm="IoThings"')
         res.status(401).send('Authentication required.')
