@@ -1,3 +1,3 @@
-const { PubSub } = require('apollo-server');
+const { PubSub } = require('graphql-subscriptions');
 
 module.exports = new PubSub();
