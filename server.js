@@ -13,9 +13,9 @@ app.use((req, res, next) => {
     const credentials = auth(req);
 
     if (!credentials || credentials.name !== user || credentials.pass !== pass) {
-        // res.set('WWW-Authenticate', 'Basic realm="IoThings"')
-        // res.status(401).send('Authentication required.')
-        throw new Error('Unauthorized');
+        res.set('WWW-Authenticate', 'Basic realm="IoThings"')
+        res.status(401).send('Authentication required.')
+        return;
     }
 
     next();
