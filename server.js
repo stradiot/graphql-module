@@ -2,6 +2,7 @@ const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const https = require('https');
 const auth = require('basic-auth');
+const cors = require('cors')
 const fs = require('fs');
 const schema = require('./schema/schema');
 const { port, certificatePath, privateKeyPath, user, pass } = require('./config');
@@ -9,6 +10,7 @@ const { port, certificatePath, privateKeyPath, user, pass } = require('./config'
 const apollo = new ApolloServer({ schema });
 
 const app = express();
+app.use(cors());
 app.use((req, res, next) => {
     const credentials = auth(req);
 
