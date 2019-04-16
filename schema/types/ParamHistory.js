@@ -1,6 +1,7 @@
 const {
     GraphQLObjectType,
     GraphQLInt,
+    GraphQLFloat,
     GraphQLList } = require('graphql');
 const rrd = require('rrd-module');
 
@@ -29,7 +30,7 @@ const RRDRecordType = new GraphQLObjectType({
     name: 'RRDRecord',
     fields: () => ({
         timestamp: { type: GraphQLInt },
-        value: { type: GraphQLInt }
+        value: { type: GraphQLFloat }
     })
 });
 
