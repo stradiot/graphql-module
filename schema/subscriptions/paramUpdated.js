@@ -11,8 +11,8 @@ const paramUpdated = {
         const parameter = sqlite.getDeviceParam(payload);
 
         return {
-            devParamId: parameter.dev_param_id,
-            paramId: parameter.fk_param_id,
+            paramId: parameter.dev_param_id,
+            parameterId: parameter.fk_param_id,
             devId: parameter.fk_dev_id,
             protocolId: parameter.fk_protocol_id,
             name: parameter.name,
